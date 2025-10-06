@@ -20,7 +20,7 @@
     Every day, we dap people up, spread positivity, and show love in the simplest way possible.  
     You can even book your own Dap-Up and be part of the movement — one handshake at a time.
       </p>
-      <p style="margin-top: 20px; font-size: 0.95em; color: #666;">
+     <p class="fade-in" style="margin-top: 20px; font-size: 0.95em; color: #666;">
     A portion of proceeds will go toward supporting community causes — spreading good energy in every way we can.
   </p>
     </section>
@@ -47,5 +47,19 @@
   <footer>
     <p>© 2025 Daily Dap Ups | All Rights Reserved</p>
   </footer>
+  <script>
+  const fadeEls = document.querySelectorAll('.fade-in');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  });
+
+  fadeEls.forEach(el => observer.observe(el));
+</script>
+
 </body>
 </html>
