@@ -1,89 +1,50 @@
-/* Global styling */
+/* --- Global styles (keep your existing ones) --- */
 body {
-  margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #f0f8ff, #ffeaa7);
-  color: #2c3e50;
+  background-color: #f0f8ff;
+  font-family: 'Poppins', sans-serif;
   text-align: center;
-  line-height: 1.6;
-}
-
-/* Header */
-header {
-  padding: 60px 20px;
-  background: #2c3e50;
-  color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-  font-size: 3rem;
+  padding: 50px;
   margin: 0;
 }
 
-header .tagline {
-  font-size: 1.2rem;
-  color: #f1c40f;
-}
-
-/* Main sections */
-main {
-  padding: 40px 20px;
-}
-
-section {
-  margin-bottom: 60px;
-}
-
-h2 {
+/* --- Hero Section (top part of site) --- */
+h1 {
   color: #2c3e50;
+  font-size: 3em;
   margin-bottom: 10px;
-  font-size: 2rem;
 }
 
-/* Button */
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 15px 35px;
-  background-color: #f1c40f;
-  color: #2c3e50;
-  border-radius: 50px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: all 0.3s ease;
+p {
+  color: #555;
+  font-size: 1.2em;
+  line-height: 1.6em;
 }
 
-.btn:hover {
-  background-color: #2c3e50;
-  color: #fff;
+/* --- What We Do Section --- */
+#what-we-do {
+  background: linear-gradient(135deg, #d7efff, #ffffff);
+  border-radius: 20px;
+  padding: 60px 20px;
+  margin-top: 60px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Social links */
-.socials .links {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+#what-we-do:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
-.socials a {
-  color: #2c3e50;
-  text-decoration: none;
-  border-bottom: 2px solid #f1c40f;
-  padding-bottom: 3px;
-  transition: 0.3s;
+#what-we-do h2 {
+  font-size: 2.2em;
+  color: #1a2e40;
+  margin-bottom: 20px;
 }
 
-.socials a:hover {
-  color: #f1c40f;
-  border-bottom: 2px solid #2c3e50;
-}
-
-/* Footer */
-footer {
-  background: #2c3e50;
-  color: #fff;
-  padding: 20px;
-  font-size: 0.9rem;
+#what-we-do p {
+  font-size: 1.1em;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.8em;
 }
