@@ -1,117 +1,48 @@
-/* --- Global Styles --- */
+/* === General Page Styling === */
 body {
-  margin: 0;
-  padding: 0;
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  background: linear-gradient(135deg, #a8d8ff, #e8f4ff);
-  min-height: 100vh;
-  color: #333;
-  overflow-x: hidden;
+  padding: 50px;
+  color: white;
+  animation: fadeIn 1s ease-in;
 }
 
-/* --- Page Container --- */
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  background: #ffffffb8;
-  backdrop-filter: blur(6px);
-  border-radius: 25px;
-  padding: 60px 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  margin-top: 60px;
-  animation: fadeIn 1.2s ease-out;
-}
-
-/* --- Header --- */
+/* === Header Text === */
 h1 {
-  color: #1a2e40;
-  font-size: 3.2em;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  animation: slideDown 1s ease-out;
+  font-size: 3em;
+  margin-bottom: 10px;
+  animation: fadeDown 1s ease-in-out;
 }
 
 p {
-  color: #555;
   font-size: 1.2em;
-  line-height: 1.6em;
-}
-
-/* --- What We Do Section --- */
-#what-we-do {
-  background: linear-gradient(135deg, #d7efff, #ffffff);
-  border-radius: 20px;
-  padding: 60px 20px;
-  margin-top: 60px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#what-we-do:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
-#what-we-do h2 {
-  font-size: 2.3em;
-  color: #1a2e40;
-  margin-bottom: 20px;
-}
-
-#what-we-do p {
-  font-size: 1.1em;
-  color: #333;
+  color: #f8f8f8;
   max-width: 700px;
-  margin: 0 auto;
-  line-height: 1.8em;
+  margin: 0 auto 30px;
 }
 
-/* --- Button Styling --- */
-.book-btn {
+/* === Button Styling === */
+a.button {
   display: inline-block;
-  margin-top: 30px;
-  padding: 15px 45px;
-  font-size: 1.1em;
-  color: #fff;
-  background: linear-gradient(135deg, #1a73e8, #00b4d8);
-  border: none;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  color: #0077ff;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.book-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  background: linear-gradient(135deg, #0077ff, #00c6ff);
+a.button:hover {
+  background-color: #00c6ff;
+  color: white;
+  transform: scale(1.05);
 }
 
-/* --- Fade-In Animation (for charity line & button) --- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
-
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --- Load Animations --- */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* === Footer Styling === */
 footer {
-  background-color: #ffffff22;
+  background-color: rgba(255, 255, 255, 0.1);
   padding: 20px;
   margin-top: 40px;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
@@ -120,7 +51,7 @@ footer {
 }
 
 footer p {
-  color: white;
+  color: #ffffff;
   margin-bottom: 10px;
 }
 
@@ -134,18 +65,61 @@ footer p {
 .social-links img {
   width: 30px;
   height: 30px;
-  filter: invert(100%);
-  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: brightness(0) invert(1);
+  opacity: 0;
+  transform: translateY(15px);
+  animation: floatIn 0.8s ease forwards;
+}
+
+.social-links img:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.social-links img:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.social-links img:nth-child(3) {
+  animation-delay: 0.6s;
 }
 
 .social-links img:hover {
   transform: scale(1.2);
-  filter: invert(74%) sepia(88%) saturate(600%) hue-rotate(200deg);
+  filter: brightness(0) saturate(100%) invert(65%) sepia(65%) saturate(415%) hue-rotate(180deg);
 }
 
 .copyright {
   font-size: 0.9em;
+  color: #ddd;
   opacity: 0.8;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
