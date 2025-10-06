@@ -58,5 +58,26 @@ p {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+  /* --- Book Button Styling --- */
+.book-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 40px;
+  font-size: 1.1em;
+  color: #fff;
+  background: linear-gradient(135deg, #1a73e8, #00b4d8);
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #0077ff, #00c6ff);
+}
+
 }
 
