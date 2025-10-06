@@ -1,130 +1,132 @@
 /* === General Page Styling === */
 body {
-  background: linear-gradient(135deg, #001f3f, #0077ff);
+  background: linear-gradient(135deg, #001f3f, #004aad, #00c6ff);
+  background-size: 400% 400%;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   padding: 50px;
-  color: #f5f5f5;
-  animation: fadeIn 1s ease-in;
+  color: #fefefe;
+  animation: backgroundFlow 12s ease infinite, fadeIn 1s ease-in;
+  overflow-x: hidden;
 }
 
-/* === Header Text === */
+/* === Hero Section Animations === */
 h1 {
   font-size: 3em;
   margin-bottom: 10px;
-  color: #ffffff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  animation: fadeDown 1s ease-in-out;
+  color: #ffe066;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
+  animation: fadeDown 1s ease-in-out, floatUp 3s ease-in-out infinite;
 }
 
 p {
   font-size: 1.2em;
-  color: #e0e0e0;
+  color: #f0f0f0;
   max-width: 700px;
   margin: 0 auto 30px;
+  animation: fadeIn 2s ease-in;
 }
 
 /* === Button Styling === */
 a.button {
   display: inline-block;
-  padding: 15px 40px;
-  background: linear-gradient(90deg, #0077ff, #00c6ff);
-  color: #ffffff;
+  padding: 15px 45px;
+  background: linear-gradient(90deg, #ffe066, #ffd43b, #fab005);
+  color: #202020;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
   letter-spacing: 0.5px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 20px rgba(255, 224, 102, 0.4);
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  animation: pulse 2s infinite;
 }
 
 a.button:hover {
-  transform: scale(1.05);
-  background: linear-gradient(90deg, #00c6ff, #0077ff);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+  transform: scale(1.08);
+  background: linear-gradient(90deg, #ffd43b, #ffe066);
+  box-shadow: 0 6px 25px rgba(255, 224, 102, 0.6);
 }
 
 /* === Footer Styling === */
 footer {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  margin-top: 40px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 25px;
+  margin-top: 60px;
   border-top: 2px solid rgba(255, 255, 255, 0.2);
   text-align: center;
-  animation: fadeIn 1s ease-in;
+  animation: fadeIn 1.5s ease-in;
 }
 
 footer p {
   color: #ffffff;
   margin-bottom: 10px;
+  font-size: 1.1em;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
   margin-bottom: 10px;
 }
 
 .social-links img {
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   filter: brightness(0) invert(1);
   opacity: 0;
   transform: translateY(15px);
   animation: floatIn 0.8s ease forwards;
 }
 
-.social-links img:nth-child(1) {
-  animation-delay: 0.2s;
-}
-
-.social-links img:nth-child(2) {
-  animation-delay: 0.4s;
-}
-
-.social-links img:nth-child(3) {
-  animation-delay: 0.6s;
-}
+.social-links img:nth-child(1) { animation-delay: 0.4s; }
+.social-links img:nth-child(2) { animation-delay: 0.6s; }
+.social-links img:nth-child(3) { animation-delay: 0.8s; }
 
 .social-links img:hover {
-  transform: scale(1.2);
-  filter: brightness(0) saturate(100%) invert(65%) sepia(65%) saturate(415%) hue-rotate(180deg);
+  transform: scale(1.3);
+  filter: brightness(1) sepia(1) hue-rotate(30deg) saturate(400%);
 }
 
 .copyright {
   font-size: 0.9em;
-  color: #cccccc;
+  color: #ffd43b;
   opacity: 0.9;
 }
 
-/* === Animations === */
+/* === Keyframes (Animations) === */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 @keyframes fadeDown {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes floatIn {
-  from {
-    opacity: 0;
-    transform: translateY(15px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(255, 224, 102, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 30px rgba(255, 224, 102, 0.8); }
+}
+
+@keyframes backgroundFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 
 
 
