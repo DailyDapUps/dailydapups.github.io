@@ -1,17 +1,35 @@
-/* --- Global styles (keep your existing ones) --- */
+/* --- Global Styles --- */
 body {
-  background-color: #f0f8ff;
+  margin: 0;
+  padding: 0;
   font-family: 'Poppins', sans-serif;
   text-align: center;
-  padding: 50px;
-  margin: 0;
+  background: linear-gradient(135deg, #a8d8ff, #e8f4ff);
+  min-height: 100vh;
+  color: #333;
+  overflow-x: hidden;
 }
 
-/* --- Hero Section (top part of site) --- */
+/* --- Page Container --- */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #ffffffb8;
+  backdrop-filter: blur(6px);
+  border-radius: 25px;
+  padding: 60px 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  margin-top: 60px;
+  animation: fadeIn 1.2s ease-out;
+}
+
+/* --- Header --- */
 h1 {
-  color: #2c3e50;
-  font-size: 3em;
-  margin-bottom: 10px;
+  color: #1a2e40;
+  font-size: 3.2em;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+  animation: slideDown 1s ease-out;
 }
 
 p {
@@ -36,7 +54,7 @@ p {
 }
 
 #what-we-do h2 {
-  font-size: 2.2em;
+  font-size: 2.3em;
   color: #1a2e40;
   margin-bottom: 20px;
 }
@@ -48,21 +66,12 @@ p {
   margin: 0 auto;
   line-height: 1.8em;
 }
-/* --- Fade-in animation for charity line --- */
-.fade-in {
-  opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 1.2s ease, transform 1.2s ease;
-}
 
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-  /* --- Book Button Styling --- */
+/* --- Button Styling --- */
 .book-btn {
   display: inline-block;
   margin-top: 30px;
-  padding: 15px 40px;
+  padding: 15px 45px;
   font-size: 1.1em;
   color: #fff;
   background: linear-gradient(135deg, #1a73e8, #00b4d8);
@@ -79,5 +88,27 @@ p {
   background: linear-gradient(135deg, #0077ff, #00c6ff);
 }
 
+/* --- Fade-In Animation (for charity line & button) --- */
+.fade-in {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Load Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 
