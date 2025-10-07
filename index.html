@@ -1,84 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daily Dap Ups 👊</title>
+  <meta charset="UTF-8">
+  <title>Daily Dap Ups</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>👊 Daily Dap Ups</h1>
-    <p class="tagline">One handshake, one connection at a time.</p>
-  </header>
+  <h1>Welcome to Daily Dap Ups</h1>
+  <p class="tagline" id="tagline"></p>
+  <p>We spread positivity, one dap at a time. Book your personalized experience today!</p>
 
-  <main>
-    <section class="intro">
-      <h2>What We Do</h2>
-      <p>
-       Daily Dap Ups is more than just handshakes — it’s about connection, energy, and real recognition.  
-    Every day, we dap people up, spread positivity, and show love in the simplest way possible.  
-    You can even book your own Dap-Up and be part of the movement — one handshake at a time.
-      </p>
-     <p class="fade-in" style="margin-top: 20px; font-size: 0.95em; color: #666;">
-    A portion of proceeds will go toward supporting community causes — spreading good energy in every way we can.
-       <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_idh19jX3JBy7eQ_fS_uLrzgyzf2hVm9RNQKkOAyyN4KcoA/viewform?usp=sharing&ouid=110729979295917666063" class="book-btn fade-in" target="_blank">
-  Book Your Dap-Up
-</a>
-
-  </p>
-    </section>
-
-    <section class="booking">
-      <h2>Book Your Dap-Up</h2>
-      <p>
-        Experience your own personalized <strong>Dap-Up</strong> — filmed, edited, and made to spread positive energy.  
-    Whether it’s for you or a friend, every Dap-Up adds to the movement — one handshake at a time.
-      </p>
-      <a href="#" class="btn" target="_blank">Book Now</a>
-    </section>
-
-    <section class="socials">
-      <h2>Follow the Vibe</h2>
-      <div class="links">
-        <a href="https://tiktok.com" target="_blank">TikTok</a>
-        <a href="https://instagram.com" target="_blank">Instagram</a>
-        <a href="mailto:dailydapups@gmail.com">Email Us</a>
-      </div>
-    </section>
-  </main>
+  <a href="https://docs.google.com/forms" class="button">Book Now</a>
 
   <footer>
-    <p>© 2025 Daily Dap Ups | All Rights Reserved</p>
+    <div class="social-links">
+      <a href="https://www.tiktok.com/@dailydapups?is_from_webapp=1&sender_device=pcy" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
+      </a>
+      <a href="https://youtube.com/@dailydapups?si=PY7pu9X2yF0tAtuB" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
+      </a>
+      <a href="https://www.instagram.com/dailydapups" target="_blank">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+      </a>
+    </div>
+    <p class="copyright">© 2025 Daily Dap Ups | All Rights Reserved</p>
   </footer>
+
   <script>
-  const fadeEls = document.querySelectorAll('.fade-in');
+    const text = "Spreading positivity, one dap at a time ✋🤝";
+    const tagline = document.getElementById("tagline");
+    let index = 0;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+    function type() {
+      if (index < text.length) {
+        tagline.textContent += text.charAt(index);
+        index++;
+        setTimeout(type, 80);
       }
-    });
-  });
-
-  fadeEls.forEach(el => observer.observe(el));
-</script>
-<footer>
-  <p>Follow the movement:</p>
-  <div class="social-links">
-    <a href="https://www.tiktok.com/@dailydapups?is_from_webapp=1&sender_device=pcy" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
-    </a>
-    <a href="https://www.instagram.com/dailydapups/" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-    </a>
-    <a href="https://youtube.com/@dailydapups?si=PY7pu9X2yF0tAtuB" target="_blank">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
-    </a>
-  </div>
-  <p class="copyright">© 2025 Daily Dap Ups — Keep the positivity going 🤝</p>
-</footer>
-
+    }
+    window.onload = type;
+  </script>
 </body>
 </html>
+
