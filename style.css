@@ -33,26 +33,23 @@ h1 {
   animation: glowGold 2s infinite alternate;
 }
 
-.intro {
+/* Glowing paragraph style */
+.intro, .mission, .energy {
   font-size: 1.2em;
   max-width: 700px;
   margin: 0 auto 25px;
-  line-height: 1.7;
-  color: #fdfdfd;
+  line-height: 1.8;
+  background: linear-gradient(90deg, #fff, #ffe8e8, #fff0b3, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 10px rgba(255, 200, 200, 0.3);
+  animation: shimmer 6s linear infinite, fadeUp 1s ease-in;
 }
 
-.mission {
-  font-size: 1.15em;
-  max-width: 650px;
-  margin: 0 auto 25px;
-  color: #fff3f3;
-}
-
-.energy {
-  font-size: 1.1em;
-  color: #ffeefc;
-  max-width: 650px;
-  margin: 0 auto 35px;
+/* Highlighted words */
+.intro strong, .mission strong, .energy strong {
+  color: gold;
+  -webkit-text-fill-color: gold;
 }
 
 .book-btn {
@@ -106,17 +103,9 @@ h1 {
 .floating-emojis span:nth-child(8) { left: 90%; animation-delay: 7s; }
 
 @keyframes floatUp {
-  0% {
-    transform: translateY(100vh) scale(0.8);
-    opacity: 0;
-  }
-  20% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-10vh) scale(1.2);
-    opacity: 0;
-  }
+  0% { transform: translateY(100vh) scale(0.8); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
 }
 
 /* Footer */
@@ -167,6 +156,11 @@ footer p {
   to { opacity: 1; }
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes pulse {
   0% { transform: scale(1); }
   50% { transform: scale(1.05); }
@@ -178,11 +172,17 @@ footer p {
   to { text-shadow: 0 0 20px gold, 0 0 30px #ffdd55; }
 }
 
+@keyframes shimmer {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
 @keyframes gradientShift {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+
 
 
 
