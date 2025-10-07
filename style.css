@@ -1,140 +1,109 @@
-/* === General Page Styling === */
 body {
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #7f00ff, #e100ff);
+  background-attachment: fixed;
+  color: white;
   font-family: 'Poppins', sans-serif;
   text-align: center;
   padding: 60px 20px;
-  color: #f9f9f9;
   animation: fadeIn 1s ease-in;
-  background-attachment: fixed;
 }
 
-/* === Header Text === */
 h1 {
   font-size: 3em;
   margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-  animation: fadeDown 1s ease-in-out;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+  animation: floatDown 1s ease-in-out;
 }
 
-/* === Typing Animation === */
 .tagline {
-  font-size: 1.3em;
-  color: #ffb3ec;
-  margin-bottom: 25px;
-  border-right: 3px solid #ffb3ec;
-  white-space: nowrap;
-  overflow: hidden;
-  width: 0;
-  animation: typing 3.5s steps(40, end) forwards, blink 0.75s step-end infinite;
-}
-
-/* === Main Text Sections === */
-.intro, .mission {
-  font-size: 1.15em;
-  color: #f2f2f2;
-  max-width: 700px;
-  margin: 20px auto;
-  line-height: 1.7em;
-}
-
-.mission {
+  font-size: 1.5em;
+  color: #ffe6ff;
   font-weight: 600;
-  color: #ffe066;
+  margin-bottom: 25px;
+  animation: glow 2s infinite alternate;
 }
 
-/* === Button Styling === */
-.button {
+.intro {
+  font-size: 1.2em;
+  max-width: 700px;
+  margin: 0 auto 20px;
+  line-height: 1.7;
+  color: #f3f3f3;
+}
+
+.charity {
+  font-size: 1.1em;
+  max-width: 650px;
+  margin: 15px auto 30px;
+  color: #ffd6ff;
+  font-weight: 600;
+}
+
+.book-btn {
   display: inline-block;
-  padding: 15px 40px;
-  margin-top: 25px;
-  background: linear-gradient(90deg, #ff416c, #ff4b2b);
-  color: #ffffff;
+  padding: 15px 45px;
+  background: linear-gradient(90deg, #ff00cc, #3333ff);
+  color: #fff;
   border-radius: 50px;
   text-decoration: none;
   font-weight: bold;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  font-size: 1.1em;
+  box-shadow: 0 0 25px rgba(255, 0, 200, 0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
   animation: pulse 2s infinite;
 }
 
-.button:hover {
+.book-btn:hover {
   transform: scale(1.08);
-  background: linear-gradient(90deg, #ff4b2b, #ff416c);
-  box-shadow: 0 6px 25px rgba(255, 65, 108, 0.6);
+  box-shadow: 0 0 35px rgba(255, 0, 200, 0.9);
 }
 
-/* === Footer Styling === */
+/* Footer */
 footer {
-  background-color: rgba(0, 0, 0, 0.3);
-  padding: 20px;
-  margin-top: 50px;
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
-  animation: fadeIn 1s ease-in;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin-top: 60px;
+  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 footer p {
-  color: #ffffff;
-  margin-bottom: 10px;
+  color: #f5f5f5;
+  margin-top: 10px;
+  font-size: 0.95em;
 }
 
 .social-links {
   display: flex;
   justify-content: center;
   gap: 25px;
-  margin-bottom: 10px;
 }
 
 .social-links img {
   width: 35px;
   height: 35px;
   filter: brightness(0) invert(1);
-  opacity: 0;
-  transform: translateY(15px);
-  animation: floatIn 0.8s ease forwards;
+  transition: transform 0.3s, filter 0.3s;
 }
-
-.social-links img:nth-child(1) { animation-delay: 0.2s; }
-.social-links img:nth-child(2) { animation-delay: 0.4s; }
-.social-links img:nth-child(3) { animation-delay: 0.6s; }
 
 .social-links img:hover {
   transform: scale(1.2);
-  filter: brightness(0) saturate(100%) invert(65%) sepia(65%) saturate(415%) hue-rotate(180deg);
+  filter: brightness(0) saturate(100%) invert(65%) sepia(75%) saturate(400%) hue-rotate(270deg);
 }
 
-.copyright {
-  font-size: 0.9em;
-  color: #cccccc;
-  opacity: 0.9;
-}
-
-/* === Animations === */
+/* Animations */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-@keyframes fadeDown {
+@keyframes floatDown {
   from { opacity: 0; transform: translateY(-20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-@keyframes floatIn {
-  from { opacity: 0; transform: translateY(15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink {
-  50% { border-color: transparent; }
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff99ff, 0 0 20px #cc33ff; }
+  to { text-shadow: 0 0 20px #ff66ff, 0 0 30px #9933ff; }
 }
 
 @keyframes pulse {
@@ -142,6 +111,7 @@ footer p {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
 
 
 
