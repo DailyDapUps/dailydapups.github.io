@@ -1,11 +1,12 @@
 /* === General Page Styling === */
 body {
-  background: linear-gradient(135deg, #ff512f, #dd2476, #0077ff);
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
   font-family: 'Poppins', sans-serif;
   text-align: center;
   padding: 60px 20px;
   color: #f9f9f9;
   animation: fadeIn 1s ease-in;
+  background-attachment: fixed;
 }
 
 /* === Header Text === */
@@ -20,9 +21,9 @@ h1 {
 /* === Typing Animation === */
 .tagline {
   font-size: 1.3em;
-  color: #ffe066;
+  color: #ffb3ec;
   margin-bottom: 25px;
-  border-right: 3px solid #ffe066;
+  border-right: 3px solid #ffb3ec;
   white-space: nowrap;
   overflow: hidden;
   width: 0;
@@ -40,7 +41,7 @@ h1 {
 
 .mission {
   font-weight: 600;
-  color: #ffefba;
+  color: #ffe066;
 }
 
 /* === Button Styling === */
@@ -141,6 +142,7 @@ footer p {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
 
 
 
