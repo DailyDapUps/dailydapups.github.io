@@ -25,7 +25,6 @@ body {
   100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
 }
 
-/* Random emoji placement */
 .floating-emojis span:nth-child(1) { left: 10%; animation-delay: 0s; }
 .floating-emojis span:nth-child(2) { left: 30%; animation-delay: 2s; }
 .floating-emojis span:nth-child(3) { left: 50%; animation-delay: 4s; }
@@ -136,15 +135,35 @@ footer {
 
 /* === SOCIAL BAR === */
 .footer-bar {
-  border-top: 2px solid rgba(255, 255, 255, 0.2);
+  margin-top: 20px;
+  position: relative;
   padding-top: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 20px;
+}
+
+.glow-bar {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ffd700, transparent);
+  transform: translateX(-50%);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  border-radius: 2px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 10px;
 }
 
 .social-icons a {
   color: #fff;
-  font-size: 1.6rem;
-  margin: 0 15px;
+  font-size: 1.8rem;
   transition: all 0.3s ease;
 }
 
@@ -157,7 +176,9 @@ footer {
 .copyright {
   font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.8);
+  margin-top: 10px;
 }
+
 
 
 
